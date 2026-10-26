@@ -1,0 +1,23 @@
+# 1. Push to GitHub (create an empty repo "pr-demo" on GitHub first)
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/<username>/pr-demo.git
+git push -u origin main
+
+# 2. New branch + change
+git checkout -b feature-multiply
+# add to main.py (above the if __name__ line):
+#   def multiply(a, b):
+#       return a * b
+git add .
+git commit -m "Add multiply function"
+git push -u origin feature-multiply
+
+# 3. Pull request: GitHub repo > Compare & pull request > Create pull request > Merge pull request
+
+# 4. Update local main
+git checkout main
+git pull origin main
+git log --oneline
